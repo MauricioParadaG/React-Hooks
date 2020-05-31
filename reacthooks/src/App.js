@@ -8,12 +8,16 @@ import ProductComponent from './components/Product.component';
 
 function App() {
 
+  // State for Products
   const [products, setProducts] = useState([
     {id: 1, name:'Tshirt tommy', price:50},
     {id: 2, name:'Tshirt Nike', price:40},
     {id: 3, name:'Tshirt Adidas', price:30},
     {id: 4, name:'Tshirt Berlin', price:20}
   ]);
+
+  // State for Shopping Cart
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   const yearDate = new Date().getFullYear();
 
@@ -28,6 +32,11 @@ function App() {
         <ProductComponent
           key={product.id}
           productProp= {product}
+          productsState={products}
+          shoppingCartState={shoppingCart}
+          //Functions 
+          
+          addProductCartState={setShoppingCart}
         ></ProductComponent>  
       ))
       }
