@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react';
 import HeaderComponent from './components/Header.component'
 import FooterComponent from './components/Footer.component';
 import ProductComponent from './components/Product.component';
+import ShoppingCartComponent from './components/ShoppingCart.component';
 
 //import logo from './logo.svg';
 // import './App.css';
@@ -41,10 +42,14 @@ function App() {
       ))
       }
 
+      <ShoppingCartComponent
+        shoppingCartState={shoppingCart}
+        addProductCartState={setShoppingCart}
+      />
       
       <FooterComponent
         date={yearDate}
-      ></FooterComponent>
+      />
     </Fragment>
 }
 

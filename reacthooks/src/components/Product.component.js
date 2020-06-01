@@ -13,11 +13,21 @@ const ProductComponent = ({productProp, shoppingCartState, addProductCartState, 
         ]);
     }
 
+    const deleteFromCart = (id) => {
+        const products = shoppingCartState.filter(product => product.id !== id);
+        addProductCartState(products);
+    }
+    
     return (
     <div>
         <h2>{name}</h2>
         <p>${price}</p>
-        <button type="button" onClick={() => addToCart(id)}>Add To Cart</button>
+
+        { productsState  ?
+           <button type="button" onClick={() => addToCart(id)}>Add To Cart</button>
+        :
+            <button type="button" onClick={() => deleteFromCart(id)}>Delete</button>
+        }
     </div>
     );
 }
