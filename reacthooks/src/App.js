@@ -9,7 +9,7 @@ import ShoppingCartComponent from './components/ShoppingCart.component';
 
 function App() {
 
-  // State for Products
+  // State for Products - Hook
   const [products, setProducts] = useState([
     {id: 1, name:'Tshirt tommy', price:50},
     {id: 2, name:'Tshirt Nike', price:40},
